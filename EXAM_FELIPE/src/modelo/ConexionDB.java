@@ -28,7 +28,7 @@ public class ConexionDB {
 	//Instancia unica
 	private static ConexionDB instance = null;
 	
-	private ConexionDB(String HOST,String BBDD,String USER,String PASS) {
+	public ConexionDB(String HOST,String BBDD,String USER,String PASS) {
 		this.host=HOST;
 		this.bbdd=BBDD;
 		this.user=USER;
@@ -39,19 +39,19 @@ public class ConexionDB {
 	//Implementar SingleTon
 	public static ConexionDB getInstance(String HOST,String BBDD,String USER,String PASS) {
 	      if(instance == null) {
-	         instance = null;
+	         instance = new ConexionDB(HOST,BBDD,USER,PASS);
 	      }
 	      return instance;
 	   }
 	//Este método es el mismo que el anterior pero no es necesario
 	//pasar parámetros de base de datos ya que toma los
 	//valores por defecto
-	public static ConexionDB getInstance() {
+	/*public static ConexionDB getInstance() {
 	      if(instance == null) {
-	         instance = null;
+	         instance = new ConexionDB(HOST,BBDD,USER,PASS);
 	      }
 	      return instance;
-	  }
+	  }*/
 	
 	//Metodo que permite la conexion a la base de datos
 	public boolean connectDB(){

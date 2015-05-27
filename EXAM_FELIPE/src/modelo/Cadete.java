@@ -1,5 +1,7 @@
 package modelo;
 
+import java.util.ArrayList;
+
 //Clase que almacenará todos los datos de un cadete
 public class Cadete {
 	//Propiedades
@@ -9,7 +11,10 @@ public class Cadete {
 	private int edad=0; 
 	private String nacionalidad="";
 	private int equipo=0; 
-
+	private int datos1[]={id,edad,equipo};
+	private String datos[] ={nombre,apellidos,nacionalidad};
+	
+	
 	//Constructores
 	public Cadete() {
 		
